@@ -1,5 +1,8 @@
 package net.Eric.accounting.entity;
 
+import java.time.LocalDateTime;
+import java.util.Date;
+
 import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
@@ -23,8 +26,8 @@ public class Account {
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private Long id;
 	
-	@Column(name = "isExpense")
-	private boolean isExpense ;
+	@Column(name = "expensed")
+	private boolean expensed ;
 	
 	@Column(name = "category")
 	private String category ;
@@ -32,15 +35,19 @@ public class Account {
 	@Column(name = "amount")
 	private Long amount ;
 	
+	@Column(name = "createdate")
+	private LocalDateTime createDate;
+	
 	public Account() {
 		
 	}
 	
-	public Account(Long id, boolean isExpense, String category, long amount) {
+	public Account(Long id, boolean expensed, String category, long amount,LocalDateTime createDate) {
 		this.id = id;
-		this.isExpense = isExpense;
+		this.expensed = expensed;
 		this.category = category;
 		this.amount = amount;
+		this.createDate = createDate;
 	}
 
 	public Long getId() {
@@ -51,12 +58,12 @@ public class Account {
 		this.id = id;
 	}
 
-	public boolean isExpense() {
-		return isExpense;
+	public boolean getExpensed() {
+		return expensed;
 	}
 
-	public void setExpense(boolean isExpense) {
-		this.isExpense = isExpense;
+	public void setExpensed(boolean expensed) {
+		this.expensed = expensed;
 	}
 
 	public String getCategory() {
@@ -74,6 +81,17 @@ public class Account {
 	public void setAmount(Long amount) {
 		this.amount = amount;
 	}
+
+	public LocalDateTime getCreateDate() {
+		return createDate;
+	}
+
+	public void setCreateDate(LocalDateTime createDate) {
+		this.createDate = createDate;
+	}
+
+
+	
 
 	
 	

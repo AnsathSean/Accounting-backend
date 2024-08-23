@@ -1,18 +1,25 @@
 package net.Eric.accounting.dto;
 
+import java.time.LocalDateTime;
+
 public class AccountDto {
 
 	private Long id;
-	private boolean isExpense ;
+	private boolean expensed ;
 	private String category;
 	private Long amount ;
+	private LocalDateTime createDate;
 	
 	public AccountDto() {
 		
 	}
 	
-	public AccountDto(Long id, boolean isExpense, String category, Long amount) {
-		
+	public AccountDto(Long id, boolean expensed, String category, Long amount, LocalDateTime createDate) {
+		this.id = id;
+		this.expensed = expensed;
+		this.category = category;
+		this.amount = amount;
+		this.createDate = createDate;
 	}
 
 	public Long getId() {
@@ -23,12 +30,12 @@ public class AccountDto {
 		this.id = id;
 	}
 
-	public boolean isExpense() {
-		return isExpense;
+	public boolean getExpensed() {
+		return expensed;
 	}
 
-	public void setExpense(boolean isExpense) {
-		this.isExpense = isExpense;
+	public void setExpensed(boolean expensed) {
+		this.expensed = expensed;
 	}
 
 	public String getCategory() {
@@ -45,6 +52,14 @@ public class AccountDto {
 
 	public void setAmount(Long amount) {
 		this.amount = amount;
+	}
+
+	public LocalDateTime getCreateDate() {
+		return createDate;
+	}
+
+	public void setCreateDate(LocalDateTime createDate) {
+		this.createDate = createDate;
 	}
 	
 	
