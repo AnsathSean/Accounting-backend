@@ -5,7 +5,8 @@ import java.time.LocalDateTime;
 public class AccountDto {
 
 	private Long id;
-	private boolean expensed ;
+	private String name;
+	private Boolean expensed ;
 	private String category;
 	private Long amount ;
 	private LocalDateTime createDate;
@@ -14,8 +15,9 @@ public class AccountDto {
 		
 	}
 	
-	public AccountDto(Long id, boolean expensed, String category, Long amount, LocalDateTime createDate) {
+	public AccountDto(Long id,String name, Boolean expensed, String category, Long amount, LocalDateTime createDate) {
 		this.id = id;
+		this.name = name;
 		this.expensed = expensed;
 		this.category = category;
 		this.amount = amount;
@@ -34,7 +36,7 @@ public class AccountDto {
 		return expensed;
 	}
 
-	public void setExpensed(boolean expensed) {
+	public void setExpensed(Boolean expensed) {
 		this.expensed = expensed;
 	}
 
@@ -61,6 +63,16 @@ public class AccountDto {
 	public void setCreateDate(LocalDateTime createDate) {
 		this.createDate = createDate;
 	}
+
+	public String getName() {
+		return name;
+	}
+
+	public void setName(String name) {
+		this.name = name;
+	}
+	
+	
 	
 	
 }

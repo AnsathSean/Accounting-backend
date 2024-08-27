@@ -26,8 +26,11 @@ public class Account {
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private Long id;
 	
+	@Column(name = "name")
+	private String name;
+	
 	@Column(name = "expensed")
-	private boolean expensed ;
+	private Boolean expensed ;
 	
 	@Column(name = "category")
 	private String category ;
@@ -42,8 +45,9 @@ public class Account {
 		
 	}
 	
-	public Account(Long id, boolean expensed, String category, long amount,LocalDateTime createDate) {
+	public Account(Long id,String name, Boolean expensed, String category, long amount,LocalDateTime createDate) {
 		this.id = id;
+		this.name = name;
 		this.expensed = expensed;
 		this.category = category;
 		this.amount = amount;
@@ -62,7 +66,7 @@ public class Account {
 		return expensed;
 	}
 
-	public void setExpensed(boolean expensed) {
+	public void setExpensed(Boolean expensed) {
 		this.expensed = expensed;
 	}
 
@@ -88,6 +92,14 @@ public class Account {
 
 	public void setCreateDate(LocalDateTime createDate) {
 		this.createDate = createDate;
+	}
+
+	public String getName() {
+		return name;
+	}
+
+	public void setName(String name) {
+		this.name = name;
 	}
 
 
