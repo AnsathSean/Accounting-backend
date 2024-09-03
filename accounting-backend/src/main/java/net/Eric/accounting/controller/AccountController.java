@@ -65,4 +65,14 @@ public class AccountController {
 		return new ResponseEntity<>(accountDtos,HttpStatus.OK);
 	}
 	
+    @GetMapping("/categories")
+    public List<String> getAllCategories() {
+        return accountsService.getAllCategories();
+    }
+    
+    @GetMapping("/weekly/{year}/{week}")
+    public List<AccountDto> getAccountsByWeek(@PathVariable("year") int year, @PathVariable("week") int week) {
+        return accountsService.getAccountsByWeek(year, week);
+    }
+	
 }

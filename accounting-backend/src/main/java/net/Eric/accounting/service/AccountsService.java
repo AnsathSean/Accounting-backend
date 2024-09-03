@@ -12,4 +12,6 @@ public interface AccountsService {
 	AccountDto updateAccount(AccountDto accountDto,Long id);
 	void deleteAccount(Long id);
 	List<AccountDto> getAllAccountsByCategory(String category);
+	List<String> getAllCategories();
+	List<AccountDto> getAccountsByWeek(int year, int week);
 }
